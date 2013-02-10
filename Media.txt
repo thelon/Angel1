@@ -1,10 +1,13 @@
-﻿Sounds:
+﻿Wellcome string
+http://www.freesound.org/people/Robinhood76/sounds/66285/
+
+
+
+Sounds:
 http://www.freesound.org/people/klankbeeld/sounds/169039/
 Hymn:
 http://www.freesound.org/people/miastodzwiekow/sounds/96901/
 
-Main Theme:()
-http://www.freesound.org/people/Robinhood76/sounds/66285/
 
 Credo:
 http://www.freesound.org/people/cormi/sounds/113653/

@@ -11,8 +11,8 @@ var Util = {
 }
 
 var Const = {
-    CanvasWidth : 400,
-	CanvasHeight : 300
+    CanvasWidth : 600,
+	CanvasHeight : 400
 }
 
 var Font = {
@@ -64,11 +64,11 @@ function viewStart()
 
 	context.font      = Font.Title;
 	context.fillStyle = Colors.Pretty;
-	context.fillText("Anioł Stróż", 120, 70);
+	context.fillText("Anioł Stróż", 220, 70);
 	context.font      = Font.Subtitle;
-	context.fillText("epizod 1", 140, 180);
+	context.fillText("epizod 1", 240, 280);
 	context.font      = Font.Subtitle2;
-	context.fillText("Marcin Zawadzki (thelon78@gmail.com)", 140, 200);
+	context.fillText("Marcin Zawadzki (thelon78@gmail.com)", 240, 300);
 }
 
 var Res = ResPL;

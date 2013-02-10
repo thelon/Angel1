@@ -18,12 +18,14 @@ var Const = {
 var Font = {
 	Title : "normal 32px Monotype",
 	Subtitle : "normal 20px Monotype",
-    Subtitle2 : "normal 12px Monotype"
+    Subtitle2 : "normal 12px Monotype",
+	Light : "normal 10px Monotype"
 }
 
 var Colors = {
-    Pretty : "lightBlue",
-	Background : "blue"
+    Pretty : "blue",
+	Background : "black",
+	Light : "grey"
 }
 
 var ResPL ={
@@ -56,12 +58,29 @@ var ResPL ={
 					", albowiem do nich należy Królestwo niebieskie."]	
 };
 
+/* Keyboard */
+function keysStart(){
+	$(document).keyup(function(evt){
+	if (evt.keycode=32){
+		viewMenu();
+	}	
+	});
+}
+
 /* CANVAS VIEW */
+function partClean(){
+	context.fillStyle = Colors.Background;
+	context.fillRect(0,0, Const.CanvasWidth ,Const.CanvasHeight);
+	
+}
+
+function viewMenu(){
+	partClean();
+}
+
 function viewStart()
 {
-	context.fillStyle = Font.Background;
-	context.fillRect(0,0, Const.CanvasWidth ,Const.CanvasHeight);
-
+	partClean();
 	context.font      = Font.Title;
 	context.fillStyle = Colors.Pretty;
 	context.fillText("Anioł Stróż", 220, 70);
@@ -69,6 +88,10 @@ function viewStart()
 	context.fillText("epizod 1", 240, 280);
 	context.font      = Font.Subtitle2;
 	context.fillText("Marcin Zawadzki (thelon78@gmail.com)", 240, 300);
+	context.font      = Font.Light;
+	context.fillStyle = Colors.Light;
+	context.fillText("Naciśnij spację",260,350);
+	keysStart();
 }
 
 var Res = ResPL;

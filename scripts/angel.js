@@ -22,10 +22,14 @@ var Font = {
 	Light : "normal 10px Monotype"
 }
 
-var Colors = {
+var Color = {
     Pretty : "blue",
 	Background : "black",
 	Light : "grey"
+}
+
+var Audio = {
+	Wellcome : "audioWellcome"
 }
 
 var ResPL ={
@@ -57,6 +61,16 @@ var ResPL ={
 					", albowiem oni będą nazwani synami Bożymi.",
 					", albowiem do nich należy Królestwo niebieskie."]	
 };
+/* Canvas helper */
+function myDrawText(text, font, color, x, y){
+   context.fillStyle =color;
+   context.font = font;
+   context.fillText(text,x,y);
+}
+
+function myPlay(audio){
+	document.getElementById(audio).play();
+}
 
 /* Keyboard */
 function keysStart(){
@@ -69,28 +83,27 @@ function keysStart(){
 
 /* CANVAS VIEW */
 function partClean(){
-	context.fillStyle = Colors.Background;
+	context.fillStyle = Color.Background;
 	context.fillRect(0,0, Const.CanvasWidth ,Const.CanvasHeight);
-	
+}
+
+function partTitle(){
+	myDrawText("Anioł Stróż",Font.Title,Color.Pretty, 220, 70);
 }
 
 function viewMenu(){
 	partClean();
+	partTitle();
 }
 
 function viewStart()
 {
 	partClean();
-	context.font      = Font.Title;
-	context.fillStyle = Colors.Pretty;
-	context.fillText("Anioł Stróż", 220, 70);
-	context.font      = Font.Subtitle;
-	context.fillText("epizod 1", 240, 280);
-	context.font      = Font.Subtitle2;
-	context.fillText("Marcin Zawadzki (thelon78@gmail.com)", 240, 300);
-	context.font      = Font.Light;
-	context.fillStyle = Colors.Light;
-	context.fillText("Naciśnij spację",260,350);
+	partTitle();
+	myPlay(Audio.Wellcome);
+	myDrawText("epizod 1",Font.Subtitle,Color.Pretty, 240, 280);
+	myDrawText("Marcin Zawadzki (thelon78@gmail.com)",Font.Subtitle,Color.Pretty, 240, 300);
+	myDrawText("Naciśnij spację",Font.Light, Color.Light, 260,350);
 	keysStart();
 }
 

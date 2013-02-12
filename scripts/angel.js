@@ -12,7 +12,11 @@ var Util = {
 
 var Const = {
     CanvasWidth : 600,
-	CanvasHeight : 400
+	CanvasHeight : 400,
+	ScoreStartX : 550,
+	StoreStartY : 0,
+	StoreWidth  : 0,
+	StoreHeight : 0
 }
 
 var Font = {
@@ -25,7 +29,8 @@ var Font = {
 var Color = {
     Pretty : "blue",
 	Background : "black",
-	Light : "grey"
+	Light : "grey",
+	ScoreBackground : "brown"
 }
 
 var Audio = {
@@ -75,9 +80,17 @@ function myPlay(audio){
 /* Keyboard */
 function keysStart(){
 	$(document).keyup(function(evt){
-	if (evt.keycode=32){
+	if (evt.keycode==32){
 		viewMenu();
 	}	
+	});
+}
+
+function keysMenu(){
+	$(document).keyup(function(evt){
+	if (evt.keycode==32){
+		viewGame();
+	}
 	});
 }
 
@@ -91,9 +104,16 @@ function partTitle(){
 	myDrawText("Anioł Stróż",Font.Title,Color.Pretty, 220, 70);
 }
 
+function viewGame(){
+	//Score
+	context.fillStyle = Color.ScoreBackground;
+	context.fillRect(Const.ScoreStartX, Const.ScoreStartY, Const.ScoreWidth, Const.ScoreHeight);
+}
+
 function viewMenu(){
 	partClean();
 	partTitle();
+	keysMenu();
 }
 
 function viewStart()

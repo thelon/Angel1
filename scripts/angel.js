@@ -14,9 +14,13 @@ var Const = {
     CanvasWidth : 600,
 	CanvasHeight : 400,
 	ScoreStartX : 550,
-	StoreStartY : 0,
-	StoreWidth  : 0,
-	StoreHeight : 0
+	ScoreStartY : 0,
+	ScoreWidth  : 0,
+	ScoreHeight : 0,
+	SubStartX : 0,
+	SubStartY : 350,
+	SubWidth  : 600,
+	SubHeight : 50
 }
 
 var Font = {
@@ -30,7 +34,8 @@ var Color = {
     Pretty : "blue",
 	Background : "black",
 	Light : "grey",
-	ScoreBackground : "brown"
+	ScoreBackground : "brown",
+	SubBackground : "green"
 }
 
 var Audio = {
@@ -80,7 +85,7 @@ function myPlay(audio){
 /* Keyboard */
 function keysStart(){
 	$(document).keyup(function(evt){
-	if (evt.keycode==32){
+	if (evt.keycode=32){
 		viewMenu();
 	}	
 	});
@@ -88,7 +93,7 @@ function keysStart(){
 
 function keysMenu(){
 	$(document).keyup(function(evt){
-	if (evt.keycode==32){
+	if (evt.keycode=32){
 		viewGame();
 	}
 	});
@@ -104,10 +109,31 @@ function partTitle(){
 	myDrawText("Anioł Stróż",Font.Title,Color.Pretty, 220, 70);
 }
 
-function viewGame(){
-	//Score
+function partScore(){
 	context.fillStyle = Color.ScoreBackground;
 	context.fillRect(Const.ScoreStartX, Const.ScoreStartY, Const.ScoreWidth, Const.ScoreHeight);
+}
+
+function partSub(){
+	context.fillStyle = Color.SubBackground;
+	context.fillRect(Const.SubStartX, Const.SubStartY, Const.SubWidth, Const.SubHeight);
+}
+
+function partTenRulesGame()
+{
+	context.fillStyle = Color.Light;
+	context.beginPath();
+	context.arc(50,50,25,0,2*Math.PI,false);
+	context.endPath();
+	context.fill();
+	//context.fillArc(50, 50, 25,25, 0, 360);
+}
+
+function viewGame(){
+    partClean();
+	partScore();
+	partSub();
+	partTenRulesGame();
 }
 
 function viewMenu(){

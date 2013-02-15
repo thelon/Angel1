@@ -1,7 +1,19 @@
 console.log('loaded angel.js');
-
+/*
+	Class Control - method Draw
+	Method IsClicked
+	
+	Class View
+	method Draw
+	event OnKeyDown
+	event OnMouseDown
+	
+*/
 (function(){
 // UTIL CLASS /
+
+
+
 var Util = {
 	init : function initArray(){
 		this.length = initArray.arguments.length
@@ -124,7 +136,6 @@ function partTenRulesGame()
 	context.fillStyle = Color.Light;
 	context.beginPath();
 	context.arc(50,50,25,0,2*Math.PI,false);
-	context.endPath();
 	context.fill();
 	//context.fillArc(50, 50, 25,25, 0, 360);
 }

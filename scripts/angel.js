@@ -20,19 +20,10 @@ console.log('loaded angel.js');
 
 
 
-/* Canvas helper */
-function myDrawText(text, font, color, x, y){
-   context.fillStyle =color;
-   context.font = font;
-   context.fillText(text,x,y);
-}
 
-function myPlay(audio){
-	document.getElementById(audio).play();
-}
 
 /* Keyboard */
-function keysStart(){
+/*function keysStart(){
 	$(document).keyup(function(evt){
 	if (evt.keycode=32){
 		viewMenu();
@@ -47,17 +38,18 @@ function keysMenu(){
 	}
 	});
 }
-
+*/
 /* CANVAS VIEW */
+/*
 function partClean(){
 	context.fillStyle = Color.Background;
 	context.fillRect(0,0, Const.CanvasWidth ,Const.CanvasHeight);
 }
-
-function partTitle(){
-	myDrawText("Anioł Stróż",Font.Title,Color.Pretty, 220, 70);
-}
-
+*/
+//function partTitle(){
+//	myDrawText();
+//}
+/*
 function partScore(){
 	context.fillStyle = Color.ScoreBackground;
 	context.fillRect(Const.ScoreStartX, Const.ScoreStartY, Const.ScoreWidth, Const.ScoreHeight);
@@ -95,9 +87,9 @@ function viewStart()
 	partClean();
 	partTitle();
 	myPlay(Audio.Wellcome);
-	myDrawText("epizod 1",Font.Subtitle,Color.Pretty, 240, 280);
-	myDrawText("Marcin Zawadzki (thelon78@gmail.com)",Font.Subtitle,Color.Pretty, 240, 300);
-	myDrawText("Naciśnij spację",Font.Light, Color.Light, 260,350);
+	//myDrawText("epizod 1",Font.Subtitle,Color.Pretty, 240, 280);
+	//myDrawText("Marcin Zawadzki (thelon78@gmail.com)",Font.Subtitle,Color.Pretty, 240, 300);
+	//myDrawText("Naciśnij spację",Font.Light, Color.Light, 260,350);
 	keysStart();
 }
 
@@ -105,12 +97,12 @@ var Res = ResPL;
 var context;
 
 function Init(){
-	var canvas  = document.getElementById("canvas");
-	context = canvas.getContext("2d");
+	
 	viewStart();
 	console.log('Initialized');
 };
 
 Init();
+*/
 })();
 

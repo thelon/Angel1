@@ -2,12 +2,18 @@
     //By default load any module IDs from js/lib
     baseUrl: 'scripts',
     paths: {
-        
+        "viewIntro": "views/viewIntro",
+		"View" : "class/view",
+		"Label" : "class/label",
+		"Font" : "class/font",
+		"Color" : "class/colors",
+		"Helper" : "class/helper"
     }
 });
 
 
-require(["controlers/startControler.js"],function(controler)
+require(["viewIntro"],function(viewIntro)
 {
-console.log('Main.js loaded');
+	console.log('Main.js loaded');
+	viewIntro.paint();
 });

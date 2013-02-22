@@ -1,7 +1,6 @@
 ﻿define({
 	//Initializer
-	init:function(context){
-		this.context = context;
+	init:function(){		
 	},
 	//paints on canvas
 	paint : function(){

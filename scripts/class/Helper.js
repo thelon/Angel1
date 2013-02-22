@@ -1,5 +1,6 @@
 ﻿define({
-	myDrawText: function myDrawText(context, text, font, color, x, y){
+	myDrawText: function myDrawText(text, font, color, x, y){
+			var context = getContext();
 			context.fillStyle =color;
 			context.font = font;
 			context.fillText(text,x,y);

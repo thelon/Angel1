@@ -4,6 +4,7 @@
     paths: {
         "viewIntro": "views/viewIntro",
 		"View" : "class/view",
+		"Control": "class/control",
 		"Label" : "class/label",
 		"Font" : "class/font",
 		"Color" : "class/colors",

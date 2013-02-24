@@ -4,7 +4,7 @@
 			context.fillStyle =color;
 			context.font = font;
 			context.fillText(text,x,y);
-		}
+		},
 
 	myPlayAudio : function myPlay(audio){
 	document.getElementById(audio).play();

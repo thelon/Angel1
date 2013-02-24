@@ -1,4 +1,4 @@
-﻿define(["View","Label","Helper","Font","Color"], function(View,Label,Helper,Font,COlor){
+﻿define(["View","Label","Helper","Font","Color"], function(View,Label,Helper,Font,Color){
 	return View.extend({
 		controls:[
 			new Label(Helper.getContext(),"Anioł Stróż",Font.Title,Color.Pretty, 220, 70),
